@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="br.com.glicheck.GUI.CadastroMedicamento">
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Nome do Medicamento"
+        android:id="@+id/txtNomeMedicamento"
+        android:inputType="number"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtNomeMedicamento"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/txtNomeMedicamento"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Quantidade"
+        android:id="@+id/txtQuant"
+        android:layout_below="@+id/edtLaboratorio"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtQuant"
+        android:layout_alignParentStart="true"
+        android:inputType="number"
+        android:layout_below="@+id/txtQuant"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Composicao (mg)"
+        android:id="@+id/txtComposicao"
+        android:inputType="number"
+        android:layout_below="@+id/edtQuant"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="35dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtComposicao"
+        android:layout_alignParentStart="true"
+        android:inputType="number"
+        android:layout_below="@+id/txtComposicao"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/txtComposicao"
+        android:layout_alignEnd="@+id/txtComposicao" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Quantidade por Ingestão"
+        android:id="@+id/txtQuantIngestao"
+        android:inputType="number"
+        android:layout_below="@+id/edtComposicao"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtQuantIngestao"
+        android:layout_alignParentStart="true"
+        android:inputType="number"
+        android:layout_below="@+id/txtQuantIngestao"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/txtNomeMedicamento"
+        android:layout_alignEnd="@+id/txtNomeMedicamento" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:id="@+id/btnSalvar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignRight="@+id/edtLaboratorio" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Laboratorio"
+        android:id="@+id/txtLaboratorio"
+        android:inputType="number"
+        android:layout_below="@+id/edtNomeMedicamento"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtLaboratorio"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/txtLaboratorio"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:inputType="text" />
+
+
+</RelativeLayout>
