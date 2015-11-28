@@ -47,8 +47,8 @@ public class Main_Glicheck_Activity extends AppCompatActivity implements View.On
                 break;
 
             case (R.id.btnCadastrarMedicamento):
-                Intent it_Cad_Medicacao = new Intent(this, CadastroMedicamento.class);
-                startActivity(it_Cad_Medicacao);
+                Intent itListaMedicamento = new Intent(this, CadastroMedicamento.class);
+                startActivity(itListaMedicamento);
                 break;
         }
 

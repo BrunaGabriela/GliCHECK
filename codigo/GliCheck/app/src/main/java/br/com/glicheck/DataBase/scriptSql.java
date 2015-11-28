@@ -22,11 +22,11 @@ public class scriptSql {
         StringBuilder sql = new StringBuilder();
         sql.append("CREATE TABLE medicamento ");
         sql.append(" (_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,");
-        sql.append(" nome VARCHAR (20) NOT NULL,");
-        sql.append(" laboratorio VARCHAR (20) NOT NULL,");
-        sql.append(" quantidade INTEGER NOT NULL,");
-        sql.append(" composicao INTEGER NOT NULL,");
-        sql.append(" quantidade_ingestao NOT NULL)");
+        sql.append(" nome TEXT NOT NULL,");
+        sql.append(" laboratorio TEXT,");
+        sql.append(" quantidade INTEGER,");
+        sql.append(" composicao INTEGER,");
+        sql.append(" quantidade_ingestao)");
 
         return sql.toString();
     }

@@ -55,7 +55,7 @@ public class CadastroMedicamento extends AppCompatActivity implements View.OnCli
 
                         Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
 
-                        finishActivity(0);
+                        finish();
                         {
 
                         }

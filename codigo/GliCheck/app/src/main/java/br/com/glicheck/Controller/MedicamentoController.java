@@ -4,6 +4,15 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.Cursor;
+import android.view.Menu;
+import android.widget.SimpleAdapter;
+import android.widget.SimpleExpandableListAdapter;
+
+import java.lang.reflect.Array;
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import br.com.glicheck.Class.Medicamento;
 import br.com.glicheck.DataBase.CriaBanco;
@@ -50,19 +59,41 @@ public class MedicamentoController {
 
     }
 
-    public Cursor listaMedicamento(){
+    public List<Medicamento> listaMedicamento(List<Medicamento> medicamento) {
 
-        Cursor cursor;
-        String[] campos = {"nome", "quantidade"};
-        db = banco.getReadableDatabase();
-        cursor = db.query("medicamento", campos, null, null, null, null, null, null);
-
-        if (cursor != null)
-        {
+        medicamento = new ArrayList<Medicamento>();
+        try {
+            db = banco.getReadableDatabase();
+            Cursor cursor = db.rawQuery("SELECT nome, quantidade FROM medicamento ORDER BY nome", null);
             cursor.moveToFirst();
+            while (cursor.moveToNext()) {
+                Medicamento med = preencheMedicamento(cursor);
+                medicamento.add(med);
+            }
+            cursor.close();
+            db.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            db.close();
         }
-        db.close();
-        return cursor;
+        return medicamento;
+    }
+
+
+    private Medicamento preencheMedicamento(Cursor cursor)
+    {
+        //int id = cursor.getInt(cursor.getColumnIndex("_id"));
+        String nome = cursor.getString(cursor.getColumnIndex("nome"));
+        //String laboratorio = cursor.getString(cursor.getColumnIndex("laboratorio"));
+        int quantidade = cursor.getInt(cursor.getColumnIndex("quantidade"));
+        //int composicao = cursor.getInt(cursor.getColumnIndex("composicao"));
+        //int quantIngestao = cursor.getInt(cursor.getColumnIndex("quantidade_ingestao"));
+
+        Medicamento medicamento;
+        medicamento = new Medicamento(nome, quantidade);
+
+        return medicamento;
     }
 
 }

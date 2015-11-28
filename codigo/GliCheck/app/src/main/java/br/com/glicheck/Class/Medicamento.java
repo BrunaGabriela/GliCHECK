@@ -14,6 +14,20 @@ public class Medicamento {
 
     public Medicamento(){
 
+    }
+
+    public Medicamento(int id, String nome, String laboratorio, int quantidade, int composicao, int quant_ingestao){
+
+        this.id = id;
+        this.nome = nome;
+        this.laboratorio = laboratorio;
+        this.quantidade = quantidade;
+        this.composicao = composicao;
+        this.quant_ingestao = quant_ingestao;
+
+    }
+
+    public Medicamento(String nome, int quantidade){
 
     }
 

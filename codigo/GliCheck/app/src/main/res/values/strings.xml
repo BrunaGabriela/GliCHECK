@@ -22,5 +22,7 @@
     <string name="rdbRotina">Rotina</string>
     <string name="btnGraficos">Gráficos</string>
     <string name="title_activity_cadastro_medicamento">Cadastro de Medicamento</string>
+    <string name="title_activity_listagem_medicamento">Medicamentos</string>
+
 
 </resources>
