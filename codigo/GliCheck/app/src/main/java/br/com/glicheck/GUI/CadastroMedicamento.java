@@ -1,5 +1,6 @@
 package br.com.glicheck.GUI;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,7 +12,7 @@ import br.com.glicheck.Class.Medicamento;
 import br.com.glicheck.Controller.MedicamentoController;
 import br.com.glicheck.R;
 
-public class CadastroMedicamento extends AppCompatActivity implements View.OnClickListener {
+public class CadastroMedicamento extends Activity implements View.OnClickListener {
 
 
     private EditText edtNome;
@@ -55,10 +56,7 @@ public class CadastroMedicamento extends AppCompatActivity implements View.OnCli
 
                         Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
 
-                        finish();
-                        {
-
-                        }
+                        finish();{}
                     }
                     else
                         Toast.makeText(getApplicationContext(), "Favor Preecher todos os Campos", Toast.LENGTH_LONG).show();

@@ -42,7 +42,9 @@ public class MedicamentoController {
         valores.put("laboratorio", medicamento.getLaboratorio());
         valores.put("quantidade", medicamento.getQuantidade());
         valores.put("composicao", medicamento.getComposicao());
-        valores.put("quantidade_ingestao", medicamento.getQuant_ingestao());
+        valores.put("quant_ingestao", medicamento.getQuant_ingestao());
+        valores.put("quant_estoque", medicamento.getQuantidade());
+        valores.put("controle", 0);
 
         resultado = db.insert("medicamento", null, valores);
         db.close();
@@ -50,50 +52,72 @@ public class MedicamentoController {
         if (resultado == -1){
             return "Erro ao Inserir Dados";
         }
-        else {
+        else
+        {
             return "Registro Inserido com Sucesso";
         }
     }
 
-    public void controleMedicamento(){
-
-    }
-
-    public List<Medicamento> listaMedicamento(List<Medicamento> medicamento) {
-
-        medicamento = new ArrayList<Medicamento>();
-        try {
-            db = banco.getReadableDatabase();
-            Cursor cursor = db.rawQuery("SELECT nome, quantidade FROM medicamento ORDER BY nome", null);
-            cursor.moveToFirst();
-            while (cursor.moveToNext()) {
-                Medicamento med = preencheMedicamento(cursor);
-                medicamento.add(med);
-            }
-            cursor.close();
-            db.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            db.close();
-        }
-        return medicamento;
-    }
-
-
-    private Medicamento preencheMedicamento(Cursor cursor)
+    public void controleMedicamento()
     {
-        //int id = cursor.getInt(cursor.getColumnIndex("_id"));
-        String nome = cursor.getString(cursor.getColumnIndex("nome"));
-        //String laboratorio = cursor.getString(cursor.getColumnIndex("laboratorio"));
-        int quantidade = cursor.getInt(cursor.getColumnIndex("quantidade"));
-        //int composicao = cursor.getInt(cursor.getColumnIndex("composicao"));
-        //int quantIngestao = cursor.getInt(cursor.getColumnIndex("quantidade_ingestao"));
 
-        Medicamento medicamento;
-        medicamento = new Medicamento(nome, quantidade);
+    }
 
-        return medicamento;
+
+    public Cursor carregaMedicamento()
+    {
+        Cursor cursor;
+        String[] campos = {"_id", "nome"};
+        db = banco.getReadableDatabase();
+        cursor = db.query("medicamento", campos, null, null, null, null, null, null);
+
+        if (cursor != null)
+        {
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+    }
+
+    public Cursor carregaMedicamentobyID(int id){
+
+        Cursor cursor;
+        String[] campos = {"_id","nome","laboratorio","quantidade","composicao",
+                           "quant_ingestao","quant_estoque","controle"};
+        String where = "_id = "+id;
+        db = banco.getReadableDatabase();
+        cursor = db.query("medicamento", campos, where, null, null, null, null);
+
+        if (cursor != null)
+        {
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+
+    }
+
+    public void alteraMedicacao(int id, String nome, String laboratorio, int quantidade,
+                                int composicao, int quant_ingestao)
+    {
+        ContentValues valores;
+        db = banco.getWritableDatabase();
+
+        String where = "_id = "+id;
+
+        valores = new ContentValues();
+        valores.put("nome", nome);
+        valores.put("laboratorio", laboratorio);
+        valores.put("quantidade", quantidade);
+        valores.put("composicao", composicao);
+        valores.put("quant_ingestao", quant_ingestao);
+
+        db.update("medicamento", valores, where, null);
+        db.close();
+
+
+
+
     }
 
 }

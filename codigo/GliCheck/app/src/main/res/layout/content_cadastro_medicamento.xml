@@ -59,10 +59,9 @@
         android:text="Composicao (mg)"
         android:id="@+id/txtComposicao"
         android:inputType="number"
-        android:layout_below="@+id/edtQuant"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="35dp" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -97,15 +96,6 @@
         android:layout_alignRight="@+id/txtNomeMedicamento"
         android:layout_alignEnd="@+id/txtNomeMedicamento" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Salvar"
-        android:id="@+id/btnSalvar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
-        android:layout_alignRight="@+id/edtLaboratorio" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -128,6 +118,16 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
         android:inputType="text" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:id="@+id/btnSalvar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignRight="@+id/edtLaboratorio" />
 
 
 </RelativeLayout>

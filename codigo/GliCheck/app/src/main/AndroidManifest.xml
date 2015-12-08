@@ -25,11 +25,14 @@
             android:label="@string/title_activity_relatorio_glicemia" />
         <activity
             android:name=".GUI.CadastroMedicamento"
-            android:label="@string/title_activity_cadastro_medicamento"></activity>
+            android:label="Cadastro de Medicamento"></activity>
         <activity
             android:name=".GUI.ListagemMedicamento"
-            android:label="@string/title_activity_listagem_medicamento"></activity>
+            android:label="Medicamentos"></activity>
 
+        <activity
+            android:name=".GUI.AlterarMedicamento"
+            android:label="Alterar Medicamento"></activity>
     </application>
 
 </manifest>

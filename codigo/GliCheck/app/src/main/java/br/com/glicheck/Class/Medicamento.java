@@ -10,13 +10,34 @@ public class Medicamento {
     String laboratorio;
     int quantidade;
     int composicao;
+    int quant_ingestao;
+    int quant_estoque;
+    int controle;
+
+    public int getControle() {
+        return controle;
+    }
+
+    public void setControle(int controle) {
+        this.controle = controle;
+    }
+
+    public int getQuant_estoque() {
+        return quant_estoque;
+    }
+
+    public void setQuant_estoque(int quant_estoque) {
+        this.quant_estoque = quant_estoque;
+    }
+
+
 
 
     public Medicamento(){
 
     }
 
-    public Medicamento(int id, String nome, String laboratorio, int quantidade, int composicao, int quant_ingestao){
+    public Medicamento(int id, String nome, String laboratorio, int quantidade, int composicao, int quant_ingestao, int quant_estoque, int controle){
 
         this.id = id;
         this.nome = nome;
@@ -24,12 +45,15 @@ public class Medicamento {
         this.quantidade = quantidade;
         this.composicao = composicao;
         this.quant_ingestao = quant_ingestao;
+        this.quant_estoque = quant_estoque;
+        this.controle = controle;
 
     }
 
     public Medicamento(String nome, int quantidade){
 
     }
+
 
     public int getId() {
         return id;
@@ -80,7 +104,7 @@ public class Medicamento {
         this.quant_ingestao = quant_ingestao;
     }
 
-    int quant_ingestao;
+
 
 
 

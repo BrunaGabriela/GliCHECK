@@ -15,6 +15,7 @@ public class Main_Glicheck_Activity extends AppCompatActivity implements View.On
     private Button btnMedirGli;
     private Button btnRelatorio;
     private Button btnCadastrarMedicacao;
+    private Button btnListarMedicamento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +28,14 @@ public class Main_Glicheck_Activity extends AppCompatActivity implements View.On
         btnRelatorio.setOnClickListener(this);
         btnCadastrarMedicacao = (Button) findViewById(R.id.btnCadastrarMedicamento);
         btnCadastrarMedicacao.setOnClickListener(this);
+        btnListarMedicamento = (Button)findViewById(R.id.btnListaMedicamento);
+        btnListarMedicamento.setOnClickListener(this);
 
 
 
     }
     public void onClick(View v)
     {
-
         switch (v.getId()) {
 
             case (R.id.btnMedirGli):
@@ -46,8 +48,13 @@ public class Main_Glicheck_Activity extends AppCompatActivity implements View.On
                 startActivity(it_Rel_Glicemia);
                 break;
 
-            case (R.id.btnCadastrarMedicamento):
-                Intent itListaMedicamento = new Intent(this, CadastroMedicamento.class);
+//            case (R.id.btnCadastrarMedicamento):
+//                Intent itCadastroMedicamento = new Intent(this, CadastroMedicamento.class);
+//                startActivity(itCadastroMedicamento);
+//                break;
+
+            case (R.id.btnListaMedicamento):
+                Intent itListaMedicamento = new Intent(this, ListagemMedicamento.class);
                 startActivity(itListaMedicamento);
                 break;
         }

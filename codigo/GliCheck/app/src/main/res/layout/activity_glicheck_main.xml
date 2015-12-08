@@ -13,7 +13,9 @@
         android:layout_below="@+id/btnMedirGli"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="65dp" />
+        android:layout_marginTop="65dp"
+        android:layout_toLeftOf="@+id/btnCadastrarMedicamento"
+        android:layout_toStartOf="@+id/btnCadastrarMedicamento" />
 
     <Button
         android:layout_width="wrap_content"
@@ -29,9 +31,9 @@
         android:layout_height="wrap_content"
         android:text="@string/btnGraficos"
         android:id="@+id/button2"
-        android:layout_alignBottom="@+id/btnRelatorio"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -40,7 +42,9 @@
         android:text="Ingerir Medicacao"
         android:layout_below="@+id/btnCadastrarMedicamento"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/btnMedirGli"
+        android:layout_alignEnd="@+id/btnMedirGli" />
 
     <Button
         android:layout_width="wrap_content"
@@ -48,5 +52,14 @@
         android:text="Cadastrar Medicamento"
         android:id="@+id/btnCadastrarMedicamento"
         android:layout_toRightOf="@+id/btnIngestaoMedicacao" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Listar Medicamento"
+        android:id="@+id/btnListaMedicamento"
+        android:layout_below="@+id/btnCadastrarMedicamento"
+        android:layout_alignRight="@+id/btnCadastrarMedicamento"
+        android:layout_alignEnd="@+id/btnCadastrarMedicamento" />
 
 </RelativeLayout>
