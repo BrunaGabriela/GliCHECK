@@ -85,12 +85,14 @@ public class ListagemMedicamento extends AppCompatActivity implements View.OnCli
 
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
 
-
+        // AQUI!!!
         if(item.getTitle()=="Alterar"){
-            //Toast.makeText(getApplicationContext(),"Alterando...",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Alterando...",Toast.LENGTH_LONG).show();
             lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
                 @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+                {
                     String codigo;
                     cursor.moveToPosition(position);
                     codigo = cursor.getString(cursor.getColumnIndexOrThrow("_id"));
@@ -119,19 +121,3 @@ public class ListagemMedicamento extends AppCompatActivity implements View.OnCli
 
 
 
-
-
-
-//        setContentView(R.layout.activity_listagem_medicamento);
-//
-//        lstMedicamento = (ListView)findViewById(R.id.lstMedicamento);
-//
-//        btnAdcionarMedicamento = (Button)findViewById(R.id.btnAdcionarMedicamento);
-//        btnAdcionarMedicamento.setOnClickListener(this);
-//
-//        medicamento = new ArrayList<Medicamento>();
-//        db.listaMedicamento(medicamento);
-//
-//        medicamentoAdapter = new MedicamentoAdapter(this, medicamento);
-//
-//        lstMedicamento.setAdapter(medicamentoAdapter);

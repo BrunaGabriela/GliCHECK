@@ -27,7 +27,11 @@ public class AlterarMedicamento extends Activity implements View.OnClickListener
     MedicamentoController db;
     String codigo;
 
-
+    String nome;
+    String laboratorio;
+    String quantidade ;
+    String composicao ;
+    String quant_ingestao ;
 
 
     @Override
@@ -51,14 +55,18 @@ public class AlterarMedicamento extends Activity implements View.OnClickListener
         edtComposicao = (EditText)findViewById(R.id.edtComposicao);
         edtQuant_Ingestao = (EditText)findViewById(R.id.edtQuant_Ingestao);
 
-        btnAlterar = (Button)findViewById(R.id.btnAlterar);
-
         cursor = db.carregaMedicamentobyID(Integer.parseInt(codigo));
         edtNomeMedicamento.setText(cursor.getColumnIndexOrThrow("nome"));
         edtLaboratorio.setText(cursor.getColumnIndexOrThrow("laboratorio"));
         edtQuantidade.setText(cursor.getColumnIndexOrThrow("quantidade"));
         edtComposicao.setText(cursor.getColumnIndexOrThrow("composicao"));
         edtQuant_Ingestao.setText(cursor.getColumnIndexOrThrow("quant_ingestao"));
+
+         nome = edtNomeMedicamento.getText().toString();
+         laboratorio = edtLaboratorio.getText().toString();
+         quantidade = edtQuantidade.getText().toString();
+         composicao = edtComposicao.getText().toString();
+         quant_ingestao = edtQuant_Ingestao.getText().toString();
 
 
     }
@@ -67,19 +75,15 @@ public class AlterarMedicamento extends Activity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
 
-//            case (R.id.btnAlterar):
-//                db.alteraMedicacao(Integer.parseInt(codigo), edtNomeMedicamento.getText(),edtLaboratorio.getText(),
-//                                   Integer.parseInt(edtQuantidade.getText(), Integer.parseInt(edtComposicao.getText(),
-//                                   Integer.parseInt(edtQuant_Ingestao.getText());
+            case (R.id.btnAlterar):
+                db.alteraMedicacao(Integer.parseInt(codigo), nome, laboratorio, Integer.parseInt(quantidade), Integer.parseInt(composicao),
+                                   Integer.parseInt(quant_ingestao));
 
-
-
-
-
-
-
-
-        }
+                Intent intent = new Intent(AlterarMedicamento.this, ListagemMedicamento.class);
+                startActivity(intent);
+                finish();
+                break;
+       }
 
     }
 }
